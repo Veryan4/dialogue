@@ -1,0 +1,79 @@
+.backdrop {
+  width: 100%;
+  height: 35vh;
+  background-image: url('./bg-desktop-light.jpg');
+  background-repeat: round;
+}
+
+body[data-theme='dark'] .backdrop {
+  background-image: url('./bg-desktop-dark.jpg');
+}
+
+.app-container {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+}
+
+.app-wrap {
+  width: 40rem;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+h1 {
+  display: flex;
+  color: var(--very-light-gray);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.drag-text {
+  margin-top: 2rem;
+  color: var(--dark-grayish-blue);
+}
+
+#dark-mode {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.dark-mode-icon {
+  height: 100%;
+  width: 100%;
+  background-image: url('./icon-moon.svg');
+  background-repeat: no-repeat;
+  background-position: 100% 70%;
+}
+
+body[data-theme='dark'] .dark-mode-icon {
+  background-image: url('./icon-sun.svg');
+}
+
+/* Mobile */
+@media screen and (max-width: 780px) {
+  .backdrop {
+    height: 25vh;
+    background-image: url('./bg-mobile-light.jpg');
+  }
+
+  body[data-theme='dark'] .backdrop {
+    background-image: url('./bg-mobile-dark.jpg');
+  }
+
+  .app-container {
+    top: 2%;
+  }
+
+  .app-wrap {
+    max-width: 22rem;
+  }
+
+  .drag-text {
+    display: none;
+  }
+}

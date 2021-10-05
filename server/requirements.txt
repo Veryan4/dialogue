@@ -1,0 +1,10 @@
+python-dotenv
+pydantic
+uvicorn[standard]
+gunicorn
+fastapi
+fastapi-utils
+typing
+pymongo
+yapf
+pylint

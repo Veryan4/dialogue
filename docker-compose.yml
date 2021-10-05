@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  client:
+    image: client
+    ports:
+      - 80:80
+    build:
+      context: ./
+      dockerfile: ./client/Dockerfile
+
+  server:
+    image: server
+    ports:
+      - 5057:5057
+    build:
+      context: ./
+      dockerfile: ./server/Dockerfile
+    environment:
+      MONGO_USERNAME: user
+      MONGO_PASSWORD: password
+      DB_HOSTNAME: db
+      DB_PORT: '27017'
+
+  db:
+    image: mongo:4.2.3-bionic
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - db-data:/data/db
+
+volumes:
+  db-data:
